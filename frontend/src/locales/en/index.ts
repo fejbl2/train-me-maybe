@@ -24,7 +24,7 @@ const enTranlation = {
   "The minimal credit you want to have on your account. If your credit falls below this value, you will be notified by email.":
     "The minimal credit you want to have on your account. If your credit falls below this value, you will be notified by email.",
   Home: "Home",
-  About: "About",
+  About: "About us",
   Account: "Account",
   Logout: "Logout",
   Login: "Login",
