@@ -49,8 +49,8 @@ jobs:
       with:
         inlineScript: |
           az containerapp revision copy \
-            --name pa200-hw02-containerapp \
-            --resource-group PA200-HW02 \
+            --name 'pa200-hw02-containerapp' \
+            --resource-group 'PA200-HW02' \
             --from-revision latest \
             --cpu 0.25 \
             --memory 0.5Gi \
@@ -65,11 +65,11 @@ jobs:
         az storage blob delete-batch \
           --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
           --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
-          --source pa200-hw02 \
+          --source 'pa200-hw02' \
           --auth-mode login
         
         az storage blob upload-batch \
-          --destination pa200-hw02 \
+          --destination 'pa200-hw02' \
           --source dist \
           --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
           --account-key ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }} \
