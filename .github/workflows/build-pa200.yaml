@@ -51,7 +51,6 @@ jobs:
           az containerapp revision copy \
             --name 'pa200-hw02-containerapp' \
             --resource-group 'PA200-HW02' \
-            --from-revision latest \
             --cpu 0.25 \
             --memory 0.5Gi \
             --image ${{ secrets.DOCKERHUB_USERNAME }}/train-me-maybe:pa200-gemrot-${{ env.sha }}
