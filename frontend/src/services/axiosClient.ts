@@ -16,16 +16,16 @@ client.interceptors.request.use((config) => {
 });
 
 client.interceptors.response.use(
-    response => response,
-    error => {
-        if (error.response && error.response.status === 401) {
-            removeAuthToken();
-            if (typeof window !== "undefined") {
-                window.location.href = "/login";
-            }
-        }
-        return Promise.reject(error);
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      removeAuthToken();
+      if (typeof window !== "undefined") {
+        window.location.href = `/${config.urlPrefix}/login`;
+      }
     }
+    return Promise.reject(error);
+  }
 );
 
 export default client;
